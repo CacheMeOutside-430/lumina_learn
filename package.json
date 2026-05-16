@@ -1,0 +1,17 @@
+{
+  "name": "lumina-learn",
+  "private": true,
+  "version": "0.1.0",
+  "packageManager": "pnpm@9.15.4",
+  "scripts": {
+    "dev:desktop": "pnpm --filter @lumina/desktop dev",
+    "build:web": "pnpm --filter @lumina/desktop build:web",
+    "build:desktop": "pnpm --filter @lumina/desktop build",
+    "lint": "pnpm -r lint",
+    "typecheck": "pnpm -r typecheck"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.5",
+    "typescript": "^5.7.3"
+  }
+}

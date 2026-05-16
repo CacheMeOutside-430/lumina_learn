@@ -1,0 +1,15 @@
+[project]
+name = "lumina-ai-core"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+  "numpy>=2.0",
+  "sentence-transformers>=5.5",
+  "torch>=2.12",
+  "transformers>=5.8",
+  "httpx>=0.28",
+  "lumina-shared",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]

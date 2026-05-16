@@ -1,0 +1,20 @@
+[project]
+name = "lumina-backend"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi>=0.136",
+  "uvicorn[standard]>=0.34",
+  "pydantic-settings>=2.14",
+  "SQLAlchemy>=2.0",
+  "aiosqlite>=0.20",
+  "orjson>=3.10",
+  "lumina-ai-core",
+  "lumina-activity-classifier",
+  "lumina-memory",
+  "lumina-shared",
+  "lumina-vision",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]

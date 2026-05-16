@@ -1,0 +1,13 @@
+[project]
+name = "lumina-memory"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+  "chromadb>=0.6",
+  "faiss-cpu>=1.9",
+  "numpy>=2.0",
+  "lumina-ai-core",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]

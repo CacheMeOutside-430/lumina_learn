@@ -1,0 +1,16 @@
+[package]
+name = "lumina_desktop"
+version = "0.1.0"
+description = "Lumina Learn desktop assistant"
+authors = ["Lumina"]
+edition = "2021"
+
+[build-dependencies]
+tauri-build = { version = "2.0", features = [] }
+
+[dependencies]
+base64 = "0.22"
+image = "0.25"
+serde = { version = "1.0", features = ["derive"] }
+tauri = { version = "2.2", features = [] }
+xcap = "0.0.14"

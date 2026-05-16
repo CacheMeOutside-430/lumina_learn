@@ -1,0 +1,33 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "Lumina Learn",
+  "version": "0.1.0",
+  "identifier": "com.lumina.learn",
+  "build": {
+    "beforeDevCommand": "pnpm vite",
+    "devUrl": "http://127.0.0.1:1420",
+    "beforeBuildCommand": "pnpm vite build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "Lumina Learn",
+        "width": 1180,
+        "height": 820,
+        "minWidth": 860,
+        "minHeight": 620,
+        "resizable": true,
+        "decorations": true
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; connect-src 'self' ws://127.0.0.1:8765 ws://localhost:8765 http://127.0.0.1:8765 http://localhost:8765 ws://127.0.0.1:1420 ws://localhost:1420; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self'"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": []
+  }
+}
