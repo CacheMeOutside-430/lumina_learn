@@ -11,18 +11,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+
       - name: Install Python dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+
       - name: Run linters
         run: |
           ruff check .
           mypy
+
       - name: Run tests
         run: |
           pytest -q
@@ -31,19 +35,29 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
+      # 1. Setup pnpm first so the runner can locate the executable
+      - name: Install pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 9
+
+      # 2. Setup Node and safely utilize the pnpm cache
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: pnpm
-      - name: Enable Corepack
-        run: corepack enable
+
       - name: Install frontend deps
         run: pnpm install --frozen-lockfile
+
       - name: Typecheck
         run: pnpm typecheck
+
       - name: Build web assets
         run: pnpm build:web
+
       - name: Upload web build artifact
         uses: actions/upload-artifact@v4
         with:
