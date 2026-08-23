@@ -25,3 +25,9 @@ models/
 *.pth
 *.onnx
 *.log
+
+# Local toolchain binaries — never commit installers
+tools/
+.tools/
+*.exe
+*.zip
